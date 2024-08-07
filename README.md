@@ -44,3 +44,8 @@ python TrainData.py
 ```
 https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE89570
 ```
+#Turning interval-type position of cfDNA methylation into point-type position of DNA methylation (CpG sites):
+```
+!bedtools intersect -a '{cfDNA methylation positions}' -b '{cfDNA methylation positions}' -wa > cfDNA_intersect.bed
+```
+
