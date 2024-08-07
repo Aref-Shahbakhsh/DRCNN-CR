@@ -48,11 +48,11 @@ https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE89570
 ```
 python TestData_Part1.py
 ```
-# After Part 1 Turning interval-type position of cfDNA methylation into point-type position of DNA methylation (CpG sites):
+# After runnig the first part, begin to turn interval-type position of cfDNA methylation into point-type position of DNA methylation (CpG sites) by choosing the intervals which overlaps the CpG sites on DNA methylation:
 ```
-!bedtools intersect -a '{cfDNA methylation positions}' -b '{cfDNA methylation positions}' -wa > cfDNA_intersect.bed
+!bedtools intersect -a '{cfDNA methylation positions}' -b '{DNA methylation positions}' -wa > cfDNA_intersect.bed
 ```
-# Run Last Part of Test file:
+# Run Last Part of Test file‌:
 ```
 python TestData_Part2.py
 ```
