@@ -40,3 +40,7 @@ python TrainData.py
 !sort -k1,1 -k2,2n colon_dna_methylation.bed > colon_dna_methyl_sort.bed
 !bedtools intersect -a colon_dna_methyl_sort.bed -b '{DNase concatenated files resulted from Dnase.py}'.bed -wa > intesect_colon.txt
 ```
+# Now Extract the GSE89570_Processed_Data.txt.gz file Which is put on the Pre-processing Folder This file Downloaded From Below Link 
+```
+https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE89570
+```
