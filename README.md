@@ -31,3 +31,12 @@ GSM5214052, GSM5214053, GSM5214180, GSM5214420, GSM5215164, GSM5215620 (12 bed f
 ```
 !cat '{insert one of merged files names here}'.bed '{insert one of the other merged files here}'.bed | sort -k 1,1 -k2,2n | bedtools merge > '{New name for the concatenated files}'.bed
 ```
+# Now Run The TrainData.py File:
+```
+python TrainData.py
+```
+# Run bed tools
+```
+!sort -k1,1 -k2,2n colon_dna_methylation.bed > colon_dna_methyl_sort.bed
+!bedtools intersect -a colon_dna_methyl_sort.bed -b '{DNase concatenated files resulted from Dnase.py}'.bed -wa > intesect_colon.txt
+```
