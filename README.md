@@ -56,7 +56,8 @@ python TestData_Part1.py
 ```
 python TestData_Part2.py
 ```
-# Now everything is ready to run Model, so first run the helper file to load the most important classes and libraries:```
+# Now everything is ready to run Model, so first run the helper file to load the most important classes and libraries:
+```
 python helper.py
 ```
 # Then Configure the model:
