@@ -95,3 +95,11 @@ Note: To obtain unnormalized cfDNA methylation data, lines 56 to 58 in the Test_
 Modes:
 The previous one that we explained is for fine-tuning (cfDNA methyl data not normalized or normalized with minmax or z-score) using pre-trained weights (methyl DNA data normalized with z-score or minmax).
  Note: The data must be proportional to each other (except for non-normalized data). For example, if DNA methylation normalized by the z-score method is used to obtain the pretrained weights, only cfDNA methyl normalized by the z-score method can be used for fine-tuning. Tone and the final test used to get the results.
+
+Other modes:
+- Without fine-tuning: All the steps until TestData.py are passed, the fine-tuning.py code of the model is not executed and instead it is executed in testing_results.py, with the difference that the weights of the pre-trained best model are loaded.
+Note: The training and test data should match, as in the previous example.
+
+- Without using the pre-trained model:
+All the helper.py and model_configuration.py codes should be executed, and then the TestData.py to testing_results.py codes, with the difference that in TestData.py, in the 14th line, instead of dividing the data by 50:50, the data is divided by 80:20. 80 for training and 20 for testing, as well as in Fine-tuning and testing_results, the first line is deleted and the initial learning rate in Fine-tuning.py is 0.000015.
+Note: These steps can be run on only cfDNA methylation data in any mode (normalized or not).
