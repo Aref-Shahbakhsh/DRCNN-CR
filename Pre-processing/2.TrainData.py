@@ -19,6 +19,3 @@ result = result.replace(np.nan, 0)
 header = list(result.columns)
 
 result.to_csv('colon_dna_methylation.bed', index=False, header=False, sep = '\t')
-
-!sort -k1,1 -k2,2n colon_dna_methylation.bed > colon_dna_methyl_sort.bed
-!bedtools intersect -a colon_dna_methyl_sort.bed -b '{DNase concatenated files resulted from Dnase.py}'.bed -wa > intesect_colon.txt
