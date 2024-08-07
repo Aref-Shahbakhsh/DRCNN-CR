@@ -52,4 +52,7 @@ python TestData_Part1.py
 ```
 !bedtools intersect -a '{cfDNA methylation positions}' -b '{cfDNA methylation positions}' -wa > cfDNA_intersect.bed
 ```
-
+# Run Last Part of Test file:
+```
+python TestData_Part2.py
+```
