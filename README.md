@@ -1,10 +1,10 @@
 # DRCNN-CR
-This Code Contains 2 Separatly parts:
+This code consists of 2 separate parts:
 1: Preprocessing
-2: Run Models
-1: To begin with First Run The Preprocessing Files To Get Data-Set, Clear and Prepare into Train and Test set
-First You Should Run DNase Phase Linux Commands:
-The purpose of using DNase data is to extract pseudo-cfDNA methylation data from DNA methylation, because DNA methylation is related to the tissue itself, and cfDNA is shed from the tissue into the blood, and DNase is a tissue part of DNA that is accessible and probably later. be released in blood.
+2: Execute models
+1: First, run the preprocessing files to get the dataset, clean it up and split it into a training set and a test set
+First, you should run the Linux commands of the DNase phase:
+The purpose of using DNase data is to extract pseudo cfDNA methylation data from DNA methylation, because DNA methylation is related to the tissue itself and cfDNA is released from the tissue into the blood, and DNase is a tissue component of DNA that is accessible and likely to be released later. into the blood.
 
  # Gathering Colorectal DNase footprint and hotspots data from GEO dataset which were aligned mostly using hg19 or GRch38 as their reference genome: 
 GSM5214052, GSM5214053, GSM5214180, GSM5214420, GSM5215164, GSM5215620 (12 bed files)
@@ -48,16 +48,15 @@ https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE89570
 ```
 python TestData_Part1.py
 ```
-# After runnig the first part, begin to turn interval-type position of cfDNA methylation into point-type position of DNA methylation (CpG sites) by choosing the intervals which overlaps the CpG sites on DNA methylation:
+# After you have performed the first part, start converting the interval-like position of cfDNA methylation into a point-like position of DNA methylation (CpG sites) by selecting the intervals that overlap with the CpG sites of DNA methylation:
 ```
 !bedtools intersect -a '{cfDNA methylation positions}' -b '{DNA methylation positions}' -wa > cfDNA_intersect.bed
 ```
-# Run Last Part of Test file to continue converting interval positions to point-wist positions alongside normalizing the cfDNA methylation data‌:
+# Execute the last part of the test file to continue the conversion of interval positions to point-wist positions in addition to normalizing the cfDNA methylation data:
 ```
 python TestData_Part2.py
 ```
-# Now every thing is Ready for runing Model so first run the helper file to load essential class and library!:
-```
+# Now everything is ready to run Model, so first run the helper file to load the most important classes and libraries:```
 python helper.py
 ```
 # Then Configure the model:
@@ -76,7 +75,7 @@ python Cross-ValidationTraining.py
 ```
 python Validation_results.py
 ```
-# for Test phase you should first load Test Data then Fine-tune the model and get the test result.
+# for the test phase, you should first load test data, then fine-tune the model and obtain the test result.
 ```
 python TestData.py
 ```
@@ -86,18 +85,17 @@ python Fine-tuning.py
 ```
 python testing_results.py
 ```
-# Note: if you want to get other result of this paper instead of best result read the foallowing guids:
-Normalization of cfDNA methylation data with z-score method:
+# Note: If you want to get a different result of this work instead of the best result, read the following instructions:
+Normalization of cfDNA methylation data using the z-score method:
 Replace line 40 with 41 in Test_Data_part2.py and run Test_Data_part2.py
-Note: To get the z-score of DNA methylation data, line 40 of this script should be used on the final result of TrainData.py.
-Note: To obtain unnormalized cfDNA methylation data, lines 56 to 58 in the Test_Data_Part2 script can be commented out and saved.
+Note: To obtain the z-score of the DNA methylation data, line 40 of this script should be applied to the final result of TrainData.py.
+Note: To obtain non-normalized cfDNA methylation data, you can comment out and save lines 56 to 58 in the Test_Data_Part2 script.
 
 Modes:
-The previous one that we explained is for fine-tuning (cfDNA methyl data not normalized or normalized with minmax or z-score) using pre-trained weights (methyl DNA data normalized with z-score or minmax).
- Note: The data must be proportional to each other (except for non-normalized data). For example, if DNA methylation normalized by the z-score method is used to obtain the pretrained weights, only cfDNA methyl normalized by the z-score method can be used for fine-tuning. Tone and the final test used to get the results.
-
+The previously explained method is for fine-tuning (cfDNA-methyl data not normalized or normalized with minmax or z-score) using pre-trained weights (methyl-DNA data normalized with z-score or minmax).
+ Note: Data must be proportional to each other (except for non-normalized data). For example, if the DNA methylation was normalized with the z-score method to obtain the pre-trained weights, only the cfDNA methyl normalized with the z-score method can be used for fine-tuning. Tone and the final test used to determine the results.
 Other modes:
-- Without fine-tuning: All the steps until TestData.py are passed, the fine-tuning.py code of the model is not executed and instead it is executed in testing_results.py, with the difference that the weights of the pre-trained best model are loaded.
+- Without fine-tuning: all steps up to TestData.py are run, the fine-tuning.py code of the model is not executed and instead it is executed in testing_results.py, with the difference that the weights of the pre-trained best model are loaded.
 Note: The training and test data should match, as in the previous example.
 
 - Without using the pre-trained model:
