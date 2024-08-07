@@ -1,7 +1,7 @@
 # DRCNN-CR
 This Code Contains 2 Separatly parts:
--1: Preprocessing
--2: Run Models
+1: Preprocessing
+2: Run Models
 1: To begin with First Run The Preprocessing Files To Get Data-Set, Clear and Prepare into Train and Test set
 First You Should Run DNase Phase Linux Commands:
 The purpose of using DNase data is to extract pseudo-cfDNA methylation data from DNA methylation, because DNA methylation is related to the tissue itself, and cfDNA is shed from the tissue into the blood, and DNase is a tissue part of DNA that is accessible and probably later. be released in blood.
