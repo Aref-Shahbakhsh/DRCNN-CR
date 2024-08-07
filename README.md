@@ -56,3 +56,33 @@ python TestData_Part1.py
 ```
 python TestData_Part2.py
 ```
+# Now every thing is Ready for runing Model so first run the helper file to load essential class and library!:
+```
+python helper.py
+```
+# Then Configure the model:
+```
+python model_configuration.py
+```
+# load Preproccesed Train data:
+```
+python TrainData.py
+```
+# For cross validation run:
+```
+python Cross-ValidationTraining.py
+```
+# And for Validation-reslut:
+```
+python Validation_results.py
+```
+# for Test phase you should first load Test Data then Fine-tune the model and get the test result.
+```
+python TestData.py
+```
+```
+python Fine-tuning.py
+```
+```
+python testing_results.py
+```
