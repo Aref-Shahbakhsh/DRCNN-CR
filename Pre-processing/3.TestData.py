@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-#You should Download GSE89570 data from GEO website
+#Read GSE89570 data
 df = pd.read_csv("GSE89570_Processed_Data.txt", sep = '\t')
 
 #Seperating Chromosome, Start, and End of each position
