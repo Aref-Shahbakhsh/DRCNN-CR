@@ -52,7 +52,7 @@ python TestData_Part1.py
 ```
 !bedtools intersect -a '{cfDNA methylation positions}' -b '{DNA methylation positions}' -wa > cfDNA_intersect.bed
 ```
-# Run Last Part of Test file‌:
+# Run Last Part of Test file to continue converting interval positions to point-wist positions alongside normalizing the cfDNA methylation data‌:
 ```
 python TestData_Part2.py
 ```
