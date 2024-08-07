@@ -86,3 +86,12 @@ python Fine-tuning.py
 ```
 python testing_results.py
 ```
+# Note: if you want to get other result of this paper instead of best result read the foallowing guids:
+Normalization of cfDNA methylation data with z-score method:
+Replace line 40 with 41 in Test_Data_part2.py and run Test_Data_part2.py
+Note: To get the z-score of DNA methylation data, line 40 of this script should be used on the final result of TrainData.py.
+Note: To obtain unnormalized cfDNA methylation data, lines 56 to 58 in the Test_Data_Part2 script can be commented out and saved.
+
+Modes:
+The previous one that we explained is for fine-tuning (cfDNA methyl data not normalized or normalized with minmax or z-score) using pre-trained weights (methyl DNA data normalized with z-score or minmax).
+ Note: The data must be proportional to each other (except for non-normalized data). For example, if DNA methylation normalized by the z-score method is used to obtain the pretrained weights, only cfDNA methyl normalized by the z-score method can be used for fine-tuning. Tone and the final test used to get the results.
