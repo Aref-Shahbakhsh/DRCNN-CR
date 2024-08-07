@@ -9,7 +9,7 @@ The purpose of using DNase data is to extract pseudo-cfDNA methylation data from
  # Gathering Colorectal DNase footprint and hotspots data from GEO dataset which were aligned mostly using hg19 or GRch38 as their reference genome: 
 GSM5214052, GSM5214053, GSM5214180, GSM5214420, GSM5215164, GSM5215620 (12 bed files)
 
-# CrosspMap to convert genome coordinates between different assemblies such as hg18 (NCBI36) <=> hg19 (GRCh37)
+# CrosspMap to convert genome coordinates between different assemblies such as hg18 (NCBI36) <=> hg19 (GRCh37):
 ```
 !pip3 install CrossMap
 !CrossMap bed hg38ToHg19.over.chain.gz '{insert DNase name file here}'.bed > '{new name of the converted file}'.bed
@@ -27,7 +27,7 @@ GSM5214052, GSM5214053, GSM5214180, GSM5214420, GSM5215164, GSM5215620 (12 bed f
 !sort -k1,1 -k2n,2 '{the converted file name}'.bed > '{the sorted file name}'.bed
 !bedtools merge -i '{the sorted file name}'.bed -d 10 > '{the merged file name}'.bed
 ```
-# Concatenate all DNase bed files (two at the same time)
+# Concatenate all DNase bed files (two at the same time):
 ```
 !cat '{insert one of merged files names here}'.bed '{insert one of the other merged files here}'.bed | sort -k 1,1 -k2,2n | bedtools merge > '{New name for the concatenated files}'.bed
 ```
@@ -35,12 +35,12 @@ GSM5214052, GSM5214053, GSM5214180, GSM5214420, GSM5215164, GSM5215620 (12 bed f
 ```
 python TrainData.py
 ```
-# Run bed tools
+# Run bed tools:
 ```
 !sort -k1,1 -k2,2n colon_dna_methylation.bed > colon_dna_methyl_sort.bed
 !bedtools intersect -a colon_dna_methyl_sort.bed -b '{DNase concatenated files resulted from Dnase.py}'.bed -wa > intesect_colon.txt
 ```
-# Now Extract the GSE89570_Processed_Data.txt.gz file Which is put on the Pre-processing Folder This file Downloaded From Below Link 
+# Now Extract the GSE89570_Processed_Data.txt.gz file Which is put on the Pre-processing Folder This file Downloaded From Below Link: 
 ```
 https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE89570
 ```
