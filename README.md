@@ -2,9 +2,11 @@
 This Code Contains 2 Separatly parts:
 1: Preprocessing
 2: Run Models
-You Should First Run The Preprocessing Files To Get Data-Set, Clear and Prepare into Train and Test set
-First You Should Run This Linux Command to Do The Preprocessing Phase:
- # Gathering Colorectal DNase foorprint and hotspots data from GEO dataset which were aligned mostly using hg19 or GRch38 as their reference genome: 
+1: To begin with First Run The Preprocessing Files To Get Data-Set, Clear and Prepare into Train and Test set
+First You Should Run DNase Phase Linux Commands:
+The purpose of using DNase data is to extract pseudo-cfDNA methylation data from DNA methylation, because DNA methylation is related to the tissue itself, and cfDNA is shed from the tissue into the blood, and DNase is a tissue part of DNA that is accessible and probably later. be released in blood.
+
+ # Gathering Colorectal DNase footprint and hotspots data from GEO dataset which were aligned mostly using hg19 or GRch38 as their reference genome: 
 GSM5214052, GSM5214053, GSM5214180, GSM5214420, GSM5215164, GSM5215620 (12 bed files)
 
 # CrosspMap to convert genome coordinates between different assemblies such as hg18 (NCBI36) <=> hg19 (GRCh37)
