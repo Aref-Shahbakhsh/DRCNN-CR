@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-cfDNA_single = pd.read_csv("/home/fmahdavi/Colon/cfDNA/cfDNA_intersect.bed",sep = "\t",header = None)
+cfDNA_single = pd.read_csv("cfDNA_intersect.bed",sep = "\t",header = None)
 cfDNA_single = np.array(cfDNA_single)
 
 list_position_final = []
